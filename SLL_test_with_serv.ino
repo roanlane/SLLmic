@@ -55,34 +55,7 @@ void loop() {
   //int distance_between_mic = distance_be_mic();
   lenght = sll.Find_distance(angle_transmit[0],angle_transmit[1],50);
  }
- Serial.print("delta");
- Serial.print(delta[0]);
- Serial.print(" ");
- Serial.println(delta[1]);
- Serial.print("angle");
- Serial.print(f_angle[0]);
- Serial.print(" ");
- Serial.println(f_angle[1]);
- Serial.print("angle_transmit");
- Serial.print(angle_transmit[0]);
- Serial.print(" ");
- Serial.println(angle_transmit[1]);
- for (int i =0; i<=59; i++){    
-   Serial.print(sll.data_array[0][i]);
-   Serial.print(' ');
-}
- Serial.println(' ');                     
- for (int i =0; i<=59; i++){    
-   Serial.print(sll.data_array[1][i]);
-   Serial.print(' ');
- }
- Serial.println(' ');                      
- for (int i =0; i<=59; i++){    
-   Serial.print(sll.data_array[2][i]);
-   Serial.print(' ');
-  }
- Serial.println(' ');
- //rotation_serv();
+ rotation_serv();
  lcd_print();
 }
 
@@ -198,8 +171,6 @@ int distance_be_mic(){
       distance_between_mic = 10*i+10;
     }
   }
-  Serial.print("distance_be_mic ");
-  Serial.print(distance_between_mic);
   return distance_between_mic;
 }
 
